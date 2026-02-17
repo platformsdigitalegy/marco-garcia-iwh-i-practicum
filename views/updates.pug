@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .form-wrapper
+            h1 Crear Nueva Mascota
+            a(href="/") < Volver al inicio
+            form(method="POST")
+                label(for="name") Nombre:
+                input(type="text" name="name" required)
+                label(for="breed") Raza:
+                input(type="text" name="breed" required)
+                label(for="age") Edad:
+                input(type="number" name="age" required)
+                button(type="submit") Guardar Registro

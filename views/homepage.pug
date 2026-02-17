@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Lista de Objetos Personalizados
+        .navigation
+            a(href="/update-cobj") + Añadir nuevo registro
+        table
+            tr
+                th Nombre
+                th Raza
+                th Edad
+            each object in data
+                tr
+                    td #{object.properties.name}
+                    td #{object.properties.breed}
+                    td #{object.properties.age}
