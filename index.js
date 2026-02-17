@@ -7,7 +7,7 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 
-// CONFIGURACIÓN: Cambia estos valores
+
 const PRIVATE_APP_ACCESS = process.env.HS_ACCESS_TOKEN;
 const OBJECT_TYPE = '2-57754819';
 
@@ -16,9 +16,9 @@ const headers = {
     'Content-Type': 'application/json'
 };
 
-// 1. RUTA PARA LA HOMEPAGE (Muestra la tabla)
+
 app.get('/', async (req, res) => {
-    // IMPORTANTE: Cambia 'name,breed,age' por los nombres internos de tus 3 propiedades
+
     const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_TYPE}?properties=name,breed,age`;
     try {
         const resp = await axios.get(url, { headers });
@@ -29,12 +29,12 @@ app.get('/', async (req, res) => {
     }
 });
 
-// 2. RUTA PARA EL FORMULARIO (Muestra la página de creación)
+
 app.get('/update-cobj', (req, res) => {
     res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum' });
 });
 
-// 3. RUTA PARA ENVIAR LOS DATOS (Procesa el formulario)
+
 app.post('/update-cobj', async (req, res) => {
     const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_TYPE}`;
     const newRecord = {
