@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CONFIGURACIÓN: Cambia estos valores
 const PRIVATE_APP_ACCESS = process.env.HS_ACCESS_TOKEN;
-const OBJECT_TYPE = '2-57754819'; // El nombre interno de tu objeto (ej: 'pets' o '2-123456')
+const OBJECT_TYPE = '2-57754819';
 
 const headers = {
     Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
